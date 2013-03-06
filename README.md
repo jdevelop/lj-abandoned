@@ -13,6 +13,9 @@ After getting sources, you need to build the app with
 Then you may take the archive in target/abandoned-0.1-pack.tar.gz, unpack it and 
 proceed to the next section.
 
+If you do not to waste time on Java-related stuff - you may take pre-built archive 
+from **dist/** folder.
+
 Running
 ============
 

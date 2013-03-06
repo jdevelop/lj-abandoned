@@ -19,6 +19,6 @@ Running
 Go to the directory where you unpacked the TGZ archive from previous step. 
 And simply run it as
 
-> java -jar abandoned-0.1.jar 40 %livejournal-username%
+    java -jar abandoned-0.1.jar 40 %livejournal-username%
 
-where *40* is the number of threads to use for downloading content of FOAF feed.
+where **40** is the number of threads to use for downloading content of FOAF feed.

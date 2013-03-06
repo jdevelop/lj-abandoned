@@ -15,9 +15,18 @@ import java.text.SimpleDateFormat
 object Main {
 
   def main(args: Array[String]) {
-    val pool = Executors.newFixedThreadPool(args(0).toInt)
+    if (args.length == 0 || (args.length == 2 && !args(0).forall(_.isDigit))) {
+      println("Usage: java -jar abandoned-0.1.jar <number of threads> username")
+      sys.exit(1)
+    }
+    val (username, threads) = if (args.length == 2) {
+      (args(1), args(0).toInt)
+    } else {
+      (args(0), 20)
+    }
+
+    val pool = Executors.newFixedThreadPool(threads)
     implicit val ec = ExecutionContext.fromExecutor(pool)
-    val username = args(1)
     val god = new FeedParser with FeedProvider
     try {
       god.readFeedKnows("http://" + username + ".livejournal.com/data/foaf").map {
